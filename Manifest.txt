@@ -1,0 +1,24 @@
+Light, Hawker Beechcraft, 570, 3800000, 3500
+Light, Cessna Citation, 560,  3800000, 3500
+Light, Dassault Falcon, 550, 3800000, 3500
+SuperLight, Citation Excel, 540, 3800000, 3500
+SuperLight, Citation XLS, 440,  3800000, 3500
+SuperLight, Gulfstream G-100, 500, 3800000, 3500
+SuperLight, Learjet 45XR, 500, 3800000, 3500
+SuperLight, Hawker Beechcraft, 560, 3800000, 3500
+MidSize, Lear 45, 560, 3800000, 3500
+MidSize, Gulfstream G150, 560, 3800000, 3500
+MidSize, Hawker 800, 490, 3800000, 3500
+MidSize, Embraer Legacy, 500, 3800000, 3500
+MidSize, Hawker 800XP, 510, 3800000, 3500
+SuperLight, Cessna Citation Sovereign, 490, 3800000, 3500
+SuperLight, Learjet 35, 560, 3800000, 3500
+SuperLight, Learjet 60XR, 550, 3800000, 3500
+Heavy, Gulfstream II, 500, 3800000, 3500
+Heavy, Bombardier Global 6000, 450, 3800000, 3500
+Heavy, Dassault Falcon 7X, 560, 3800000, 3500
+CargoFreight, Boeing 737, 490, 3800000, 3500
+CargoFreight, MD-80, 490, 3800000, 3500
+CargoFreight, Bombardier CRJ200, 455, 3800000, 3500
+CargoFreight, DHC-8-100, 480, 3800000, 3500
+CargoFreight, MD-11, 460,  3800000, 3500
