@@ -17,14 +17,16 @@ public class JetsApplication {
 
 	private static void launch(JetsApplication jsa, Scanner sc) {
 		AirField flightDeck = new AirField();
-
+		setupAirField(flightDeck);//Exception thrown 
+		
 		boolean keepGoing = true;
 		int choice = 0;
 		System.out.println("Welcome to Air Ops: \nCurrently sky condition is clear and flight deck is hot.");
 
 		while (keepGoing == true) {
-			System.out.println();
 			displayUserMenu();
+			System.out.println();
+			
 
 			if (sc.hasNextLine()) {
 				choice = sc.nextInt();
@@ -55,10 +57,10 @@ public class JetsApplication {
 				DogFight(flightDeck);
 				break;
 			case 7:
-				AddJetToFleet(flightDeck);
+				AddJetToFleet(flightDeck, sc);
 				break;
 			case 8:
-				RemoveAJetFromFleet(flightDeck);
+				RemoveAJetFromFleet(flightDeck, sc);
 				break;
 			case 9:
 				keepGoing = false;
@@ -69,6 +71,48 @@ public class JetsApplication {
 			}
 		}
 
+	}
+	
+	private static void setupAirField(AirField flightDeck) {
+		BufferedReader bufIn = null;
+		// try catch block with resources will close the scanner
+		try {
+			
+		bufIn = new BufferedReader(new FileReader("manifest.txt"));
+			String line;
+			
+			while ((line = bufIn.readLine()) != null) {
+				String[] selections = line.split(",");
+				
+				if (selections[0].equals("CargoFreight")) {
+					String model = selections[1];
+
+					double speed = Double.parseDouble(selections[2].trim());
+					long price = Long.parseLong(selections[3].trim());
+					int range = Integer.parseInt(selections[4].trim());
+					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+					
+					CargoFreight anotherCargoFreight = new CargoFreight(model, speed, price, range, anotherField);
+					flightDeck.addJet(anotherCargoFreight);
+				}
+				if (selections[0].equals("FighterJet")) {
+					String model = selections[1];
+
+					double speed = Double.parseDouble(selections[2].trim());
+					long price = Long.parseLong(selections[3].trim());
+					int range = Integer.parseInt(selections[4].trim());
+					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+	
+					JetFighter anotherFighterJet = new JetFighter(model, speed, price, range, anotherField);
+					flightDeck.addJet(anotherFighterJet);
+				}
+
+			}
+		} catch (FileNotFoundException e) {
+			System.err.println(e);
+		} catch (IOException e) {
+			System.err.println(e);
+		}
 	}
 
 	public static void displayUserMenu() {
@@ -99,38 +143,130 @@ public class JetsApplication {
 	// menu option 2
 	private static void FlyAllJets(AirField flightDeck) {
 		for (Jets jets : flightDeck.getListOfJets()) {
-			jets.fly();//println didn't compile 
+			jets.fly();// println didn't compile
 		}
 	}
 
 	// menu option 3
 	private static void ViewFastestJet(AirField flightDeck) {
 		Jets fastestJet = new JetFighter();
-		fastestJet.setSpeed(4);
-		
-		System.out.println();
+		fastestJet.setSpeed(52);
+		for (Jets individualJet : flightDeck.getListOfJets()) {
+			if (individualJet.getSpeed() > fastestJet.getSpeed()) {
+				fastestJet = individualJet;
+			}
+
+		}
+		System.out.println(fastestJet.toString() + "\n Converted to Mach Speed: " + fastestJet.getSpeedOfJetInMach());
+
 	}
 
 	// menu option 4
 	private static void JetLongestRange(AirField flightDeck) {
-
+		Jets longRangeJet = new JetFighter();
+		longRangeJet.setRange(52);
+		for (Jets individualJet : flightDeck.getListOfJets()) {
+			if (individualJet.getRange() > longRangeJet.getRange()) {
+				longRangeJet = individualJet;
+			}
+		}
+		System.out.println(longRangeJet.toString());
 	}
+
 	// menu option 5
 	private static void LoadAllCargoJets(AirField flightDeck) {
-
+		for (Jets individualJet : flightDeck.getListOfJets()) {
+			if (individualJet instanceof CargoFreight) {
+				((CargoFreight) individualJet).loadCargo();
+			}
+		}
 	}
+
 	// menu option 6
 	private static void DogFight(AirField flightDeck) {
-
+		for (Jets individualJet : flightDeck.getListOfJets()) {
+			if (individualJet instanceof JetFighter) {
+				((JetFighter) individualJet).fight();
+			}
+		}
 	}
+
 	// menu option 7
-	private static void AddJetToFleet(AirField flightDeck) {
+	private static void AddJetToFleet(AirField flightDeck, Scanner sc) {
+		System.out.println("Adding Jet to Flight Deck Line Up  ");
+		System.out.println("1) Press 1 for CargoFreight Jet    ");
+		System.out.println("2) Press 2 for Fighter Jet         ");
+		System.out.println("3) Press 3 for Jet                 ");
+		System.out.println("4) Press 4 to Quit                 ");
+		int choice = sc.nextInt();
+
+		if (choice == 1) {
+			CargoFreight acf = new CargoFreight();
+			flightDeck.addJet(jetAddSetOfJet(acf, sc));
+
+		} else if (choice == 2) {
+			JetFighter ajf = new JetFighter();
+			flightDeck.addJet(jetAddSetOfJet(ajf, sc));
+
+		} else if (choice == 3) {
+			JetsImpl creativeJet = new JetsImpl();
+			flightDeck.addJet(jetAddSetOfJet(creativeJet, sc));
+
+		} else if (choice == 4) {
+			System.out.println("See You Next Time");
+		} else {
+			System.out.println("Hmm, your choice seems to be invalid.");
+		}
 
 	}
+
 	// menu option 8
-	private static void RemoveAJetFromFleet(AirField flightDeck) {
+	private static void RemoveAJetFromFleet(AirField flightDeck, Scanner sc) {
+		System.out.println("Whoa! SEC is here and they want a list of all current flight deck visitors.");
+		for (int individualJet = 0; individualJet < flightDeck.getListOfJets().size(); individualJet++) {
+			System.out.println("Printed Roster: [ " + individualJet + "  "
+					+ flightDeck.getListOfJets().get(individualJet).getModel() + " ] ");
+		}
+		int choice = sc.nextInt();
+
+		switch (choice) {
+		case 0:
+			flightDeck.removeJet(choice);
+			break;
+		case 1:
+			flightDeck.removeJet(choice);
+			break;
+		case 2:
+			flightDeck.removeJet(choice);
+			break;
+		case 3:
+			flightDeck.removeJet(choice);
+			break;
+		case 4:
+			flightDeck.removeJet(choice);
+			break;
+		case 5:
+			flightDeck.removeJet(choice);
+			break;
+		case 6:
+			flightDeck.removeJet(choice);
+			break;
+		case 7:
+			flightDeck.removeJet(choice);
+			break;
+		case 8:
+			flightDeck.removeJet(choice);
+			break;
+		case 9:
+			flightDeck.removeJet(choice);
+			break;
+			
+			
+		default:
+			System.out.println("Invalid Choice");
+		}
+
 	}
-	
 
 	private static Jets jetAddSetOfJet(Jets lineUp, Scanner sc) {
 		System.out.println("Enter Model of Jet: ");
@@ -173,39 +309,6 @@ public class JetsApplication {
 		}
 	}
 
-	private static void setupAirField(AirField flightDeck) {
-		// try catch block with resources will close the scanner
-		try (BufferedReader br = new BufferedReader(new FileReader("manifest.txt"))) {
-			String line;
-			while ((line = br.readLine()) != null) {
-				String[] selections = line.split(",");
-				if (selections[0].equals("CargoFreight")) {
-					String model = selections[1];
-
-					Integer speed = Integer.parseInt(selections[2].trim());
-					long price = Long.parseLong(selections[3].trim());
-					int range = Integer.parseInt(selections[4].trim());
-					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
-					CargoFreight anotherCargoFreight = new CargoFreight(model, speed, price, range, anotherField);
-					flightDeck.addJet(anotherCargoFreight);
-				}
-				if (selections[0].equals("FighterJet")) {
-					String model = selections[1];
-
-					Integer speed = Integer.parseInt(selections[2].trim());
-					long price = Long.parseLong(selections[3].trim());
-					int range = Integer.parseInt(selections[4].trim());
-					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
-					JetFighter anotherFighterJet = new JetFighter(model, speed, price, range, anotherField);
-					flightDeck.addJet(anotherFighterJet);
-				}
-
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	
 
 }
