@@ -8,8 +8,15 @@ public class AirField {
 	private List<Jets> listOfJets = new ArrayList<>();
 	
 	//create a no arg constructor to avoid the default
-	public void Airfield() {
-		
+	public void Airfield() {	
+	}
+	
+	public void addJet(Jets styleOfJet) {
+		this.listOfJets.add(styleOfJet);
+	}
+	
+	public void removeJet(int idx) {
+		this.listOfJets.remove(idx);
 	}
 	
 	//listOfJets is a private ArrayList, provide a get() to access ListOfJets in other classes
@@ -17,5 +24,5 @@ public class AirField {
 		return listOfJets;
 	}
 	
-	//TODO populate airfield with at least 5 different Jets
+	
 }

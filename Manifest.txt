@@ -1,24 +1,37 @@
-Light, Hawker Beechcraft, 570, 3800000, 3500
-Light, Cessna Citation, 560,  3800000, 3500
-Light, Dassault Falcon, 550, 3800000, 3500
-SuperLight, Citation Excel, 540, 3800000, 3500
-SuperLight, Citation XLS, 440,  3800000, 3500
-SuperLight, Gulfstream G-100, 500, 3800000, 3500
-SuperLight, Learjet 45XR, 500, 3800000, 3500
-SuperLight, Hawker Beechcraft, 560, 3800000, 3500
-MidSize, Lear 45, 560, 3800000, 3500
-MidSize, Gulfstream G150, 560, 3800000, 3500
-MidSize, Hawker 800, 490, 3800000, 3500
-MidSize, Embraer Legacy, 500, 3800000, 3500
-MidSize, Hawker 800XP, 510, 3800000, 3500
-SuperLight, Cessna Citation Sovereign, 490, 3800000, 3500
-SuperLight, Learjet 35, 560, 3800000, 3500
-SuperLight, Learjet 60XR, 550, 3800000, 3500
-Heavy, Gulfstream II, 500, 3800000, 3500
-Heavy, Bombardier Global 6000, 450, 3800000, 3500
-Heavy, Dassault Falcon 7X, 560, 3800000, 3500
+PrivateJet, Light, Hawker Beechcraft, 570, 3800000, 3500
+PrivateJet, Light, Cessna Citation, 560,  3800000, 3500
+PrivateJet, Light, Dassault Falcon, 550, 3800000, 3500
+PrivateJet, SuperLight, Citation Excel, 540, 3800000, 3500
+PrivateJet, SuperLight, Citation XLS, 440,  3800000, 3500
+PrivateJet, SuperLight, Gulfstream G-100, 500, 3800000, 3500
+PrivateJet, SuperLight, Learjet 45XR, 500, 3800000, 3500
+PrivateJet, SuperLight, Hawker Beechcraft, 560, 3800000, 3500
+PrivateJet, MidSize, Lear 45, 560, 3800000, 3500
+PrivateJet, MidSize, Gulfstream G150, 560, 3800000, 3500
+PrivateJet, MidSize, Hawker 800, 490, 3800000, 3500
+PrivateJet, MidSize, Embraer Legacy, 500, 3800000, 3500
+PrivateJet, MidSize, Hawker 800XP, 510, 3800000, 3500
+PrivateJet, SuperLight, Cessna Citation Sovereign, 490, 3800000, 3500
+PrivateJet, SuperLight, Learjet 35, 560, 3800000, 3500
+PrivateJet, SuperLight, Learjet 60XR, 550, 3800000, 3500
+PrivateJet, Heavy, Gulfstream II, 500, 3800000, 3500
+PrivateJet, Heavy, Bombardier Global 6000, 450, 3800000, 3500
+PrivateJet, Heavy, Dassault Falcon 7X, 560, 3800000, 3500
 CargoFreight, Boeing 737, 490, 3800000, 3500
 CargoFreight, MD-80, 490, 3800000, 3500
 CargoFreight, Bombardier CRJ200, 455, 3800000, 3500
 CargoFreight, DHC-8-100, 480, 3800000, 3500
-CargoFreight, MD-11, 460,  3800000, 3500
+CargoFreight, MD-11, 460, 800000, 3500
+FighterJet, CH Shenyang J-11, 900000, 900
+FighterJet, CH Chengdu, 900000, 900
+FighterJet, USMC Harrier APG-65, 900000, 900
+FighterJet, USAF F-16 Fighting Falcon, 6100000, 500
+FighterJet, USAF E-11A, 8000000, 450
+FighterJet, USCG C-37A, 64000000, 6500
+HotAirBalloon, Montgolfier, 22000, 10
+Helicopter, USA MH-47 Chinook, 160, 700000, 450
+Helicopter, USAF HH-60U, 169, 700000, 450
+Helicopter, USCG MH-65D, 160, 689900, 500
+Helicopter, USMC AH-1W SuperCobra, 160, 560788, 490 
+Drone, ARGEN Aerodreams CHI-7, 40, 8000, 3
+Drone, AUST MK.1, 40, 8000, 3

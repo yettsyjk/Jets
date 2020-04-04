@@ -26,7 +26,9 @@ public abstract class Jets {
 	//toString method
 	@Override
 	public String toString() {
-		return "Jets [model=" + model + ", speed=" + speed + ", price=" + price + ", range=" + range + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append( "Jets [model= ").append( model ).append( ", speed= ").append( speed ).append( ", price=").append( price).append( ", range=").append( range ).append( "]");
+		return builder.toString();
 	}
 	
 	// equals() and hashCode()
@@ -72,11 +74,11 @@ public abstract class Jets {
 		return true;
 	}
 	
-	
 	//get and set methods
 	public String getModel() {
 		return model;
 	}
+	
 	public void setModel(String _model) {
 		model = _model;
 	}
@@ -100,8 +102,15 @@ public abstract class Jets {
 	}
 	
 	//methods are the last to compile make sure it is abstract public void method()
-	abstract public void fly();
+	public void fly() {
+		double distanceToRefuel = ((double) range) / speed;
+		toString();
+		System.out.println(" Status [ " + model+ " flight time with remaining fuel of"+ distanceToRefuel+ " ]");
+	}
 	
-	abstract public void getSpeedOfJet(); 
+	public double getSpeedOfJetInMach() {
+		double convertToMach = speed / 767.269;
+		return convertToMach;
+	}
 	
 }

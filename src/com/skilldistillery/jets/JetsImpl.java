@@ -1,6 +1,6 @@
 package com.skilldistillery.jets;
 
-public class JetsImpl extends Jets{
+public class JetsImpl extends Jets {
 	
 	
 	public JetsImpl() {
