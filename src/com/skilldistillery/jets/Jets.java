@@ -5,7 +5,7 @@ public abstract class Jets {
 	//keep in mind autoboxing/wrapper classes of ints
 	
 	private String model;
-	private Double speed;
+	private Integer speed;
 	private Long price;
 	private Integer range;
 	
@@ -14,7 +14,7 @@ public abstract class Jets {
 		
 	}
 	//overloaded constructor 
-	public Jets(String _model, double _speed, long _price, int _range) {
+	public Jets(String _model, Integer _speed, long _price, int _range) {
 		super();
 		model = _model;
 		speed = _speed;
@@ -82,10 +82,10 @@ public abstract class Jets {
 	public void setModel(String _model) {
 		model = _model;
 	}
-	public Double getSpeed() {
+	public Integer getSpeed() {
 		return speed;
 	}
-	public void setSpeed(Double _speed) {
+	public void setSpeed(Integer _speed) {
 		speed = _speed;
 	}
 	public Long getPrice() {
