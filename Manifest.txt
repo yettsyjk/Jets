@@ -1,11 +1,11 @@
-PrivateJet, Light Hawker Beechcraft, 570, 3800000, 3500, false
-PrivateJet, Light Cessna Citation, 560,  3800000, 3500, false
-PrivateJet, Light Dassault Falcon, 550, 3800000, 3500, false
-PrivateJet, SuperLight Citation Excel, 540, 3800000, 3500, false
-PrivateJet, SuperLight Citation XLS, 440,  3800000, 3500, false
-PrivateJet, SuperLight Gulfstream G-100, 500, 3800000, 3500, false
-PrivateJet, SuperLight Learjet 45XR, 500, 3800000, 3500, false
-PrivateJet, SuperLight Hawker Beechcraft, 560, 3800000, 3500, false
+anyOtherJet,Light-Hawker-Beechcraft,570,3800000,3500,false
+anyOtherJet, Light Cessna Citation, 560,  3800000, 3500, false
+anyOtherJet, Light Dassault Falcon, 550, 3800000, 3500, false
+anyOtherJet,SuperLight Citation Excel, 540, 3800000, 3500, false
+anyOtherJet,SuperLight Citation XLS, 440,  3800000, 3500, false
+anyOtherJet,SuperLight Gulfstream G-100, 500, 3800000, 3500, false
+anyOtherJet,SuperLight Learjet 45XR, 500, 3800000, 3500, false
+anyOtherJet,SuperLight Hawker Beechcraft, 560, 3800000, 3500, false
 PrivateJet, MidSize Lear 45, 560, 3800000, 3500, false
 PrivateJet, MidSize Gulfstream G150, 560, 3800000, 3500, false
 PrivateJet, MidSize Hawker 800, 490, 3800000, 3500, false
@@ -35,3 +35,26 @@ Helicopter, USCG MH-65D, 160, 689900, 500, false
 Helicopter, USMC AH-1W SuperCobra, 160, 560788, 490 , false
 Drone, ARGEN Aerodreams CHI-7, 40, 8000, 3, false
 Drone, AUST MK.1, 40, 8000, 3, false
+
+
+CargoFreight,Boeing 737,490.00,3800000,3500,false
+CargoFreight,MD-80,490.00,3800000,3500,false
+CargoFreight,Bombardier CRJ200,455.55,3800000,3500,false
+CargoFreight,DHC-8-100,480.00,3800000,3500,false
+CargoFreight,MD-11,460.00,800000,3500,false
+FighterJet,CH Shenyang J-11,900.00,9008000,false
+FighterJet,CH Chengdu,902.00,9000000,false
+FighterJet,USMC Harrier APG-65,901.00,9004440,false
+FighterJet,USAF F-16 Fighting Falcon,610.00,5000000,false
+FighterJet,USAF E-11A,450.00,8000000,600,false
+FighterJet,USCG C-37A,6500.00,64000000,500,false
+
+anyOtherJet,Helicopter USA MH-47 Chinook,160.00,700000,450,false
+anyOtherJet,Helicopter USAF HH-60U,169.00,700000,450,false
+anyOtherJet,Helicopter USCG MH-65D,160.00,689900,500,false
+anyOtherJet,Helicopter USMC AH-1W SuperCobra,160.50,560788,490,false
+anyOtherJet,Drone ARGEN Aerodreams CHI-7,42.00,8000,3,false
+anyOtherJet,Drone AUST MK.1,40.00,8000,3,false
+anyOtherJet,Light-Hawker-Beechcraft,570.00,3800000,3500,false
+anyOtherJet,Light-Hawker-Beechcraft,570.00,3800000,3500,false
+anyOtherJet,Light Cessna Citation,560.00,3870000,3500,false

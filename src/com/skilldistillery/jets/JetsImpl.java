@@ -6,7 +6,7 @@ public class JetsImpl extends Jets {
 	public JetsImpl() {
 		
 	}
-	public JetsImpl(String _type,String _model, Integer _speed, long _price, int _range) {
-		super(_type, _model, _speed, _price, _range);
+	public JetsImpl(String _model, Integer _speed, long _price, int _range) {
+		super(_model, _speed, _price, _range);
 	}
 }

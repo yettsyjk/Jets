@@ -1,4 +1,4 @@
-#Jets
+# Jets
  - Jets Application created by Software Developer Yettsy Jo Knapp. Denver, CO.
 ## Application Overview
 - I will create a fleet of jets with different capabilities.
@@ -59,7 +59,7 @@
     - The user is presented with a sub-menu to select a jet to delete by number.
     - Stretch Goal: a user can remove a jet (or jets) by name.
 ____________________________
-#Stretch Goals
+# Stretch Goals
 ## User Story #11
     - Quit exits the program.
 
@@ -78,13 +78,13 @@ ____________________________
   - The user is given a menu option to save jets to a file. When selected the user enters the file name. The program then saves all jets to that file in the same format as the original input file. The code should first check that the file name isn't the same as the original input file, printing an error message if it is.
 
 ## Lesson Learned:
-1. dd
-1. dd
-1. dd
-1. dd
-1. dd
-1. dd
-1. dd
+1. Text file that was created for initial list of Jets had whitespace upon creation. Which wasn't the problem until the FileReader had to be told to split the line with specific parameters. This took me a while to figure out.
+``` String[] selections = line.split(",");
+```
+1. Overall the concept of abstract classes are still a weakness that I need to investigate further.
+1. Java Collection Frameworks were introduced this week and implemented within Jets application.
+1. Another fun weekend project to solidify the importance of coding along as well as labs within our 16 course work.
+1. ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
 
 ### Technologies Used:
 1. Git
@@ -109,5 +109,5 @@ ____________________________
  - Try implementing these stories only when you have committed and pushed a working project.
 
 
- ## Copyright (c)2020 Yettsy Knapp
+## Copyright (c)2020 Yettsy Knapp
  - Let's Connect on [LinkedIn](https://www.linkedin.com/in/yettsy-jo-knapp)

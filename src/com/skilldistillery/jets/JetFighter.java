@@ -6,16 +6,17 @@ public class JetFighter extends Jets implements FighterJet {
 	public JetFighter() {
 	}
 	
-	public JetFighter(String _type,String _model, double _speed, long _price, int _range, boolean _hasMissiles) {
-		super(_type,_model, _speed, _price, _range);
+	public JetFighter(String _model, double _speed, long _price, int _range, boolean _hasMissiles) {
+		super(_model, _speed, _price, _range);
 		this.hasMissiles = _hasMissiles;
 	}
 	
 	@Override 
 	public void fight() {
 		if(this.hasMissiles = true) {
-			System.out.println(this.getModel() + " is ready to fight!");
-			this.hasMissiles = false;
+			loadingMissiles();
+			System.out.println(this.getModel() + " is ready to DOGFIGHT!");
+			
 		}
 		
 	}
@@ -23,7 +24,7 @@ public class JetFighter extends Jets implements FighterJet {
 	@Override
 	public void loadingMissiles() {
 		this.hasMissiles = true;
-		System.out.println(this.getModel() +" ready to fight and loaded with missiles! ");
+		System.out.println(this.getModel() +" missiles are loaded! ");
 	}
 	
 	

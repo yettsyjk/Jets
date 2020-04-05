@@ -1,12 +1,11 @@
 package com.skilldistillery.jets;
 
-import java.text.DecimalFormat;
 
 public abstract class Jets {
 	// this is an abstract class that will require private fields and a no-arg
 	// constructor
 	// keep in mind autoboxing/wrapper classes of ints
-	private String type;
+	//private String type;
 	private String model;
 	private Double speed;
 	private Long price;
@@ -18,9 +17,9 @@ public abstract class Jets {
 	}
 
 	// overloaded constructor
-	public Jets(String _type, String _model, double _speed, long _price, int _range) {
+	public Jets(String _model, double _speed, long _price, int _range) {
 		super();
-		type = _type;
+	
 		model = _model;
 		speed = _speed;
 		price = _price;
@@ -32,13 +31,12 @@ public abstract class Jets {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append(type + " Jets [Model = ").append(model).append(", Speed = ").append(speed).append(", Price = ")
+		builder.append("[ Model = ").append(model).append(", Speed = ").append(speed).append(", Price = ")
 				.append(price).append(", Range = ").append(range).append(" ] ");
 		return builder.toString();
 	}
 
 	// equals() and hashCode()
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -47,7 +45,6 @@ public abstract class Jets {
 		result = prime * result + ((price == null) ? 0 : price.hashCode());
 		result = prime * result + ((range == null) ? 0 : range.hashCode());
 		result = prime * result + ((speed == null) ? 0 : speed.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
 
@@ -80,22 +77,11 @@ public abstract class Jets {
 				return false;
 		} else if (!speed.equals(other.speed))
 			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
 		return true;
 	}
 
 	// get and set methods
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
+	
 
 	public String getModel() {
 		return model;
@@ -131,15 +117,18 @@ public abstract class Jets {
 
 	// methods are the last to compile make sure it is abstract public void method()
 	public void fly() {
-		DecimalFormat roundDecimal = new DecimalFormat("#.##");
+		
 		double distanceToRefuel = ((double) range) / speed;
+		int hrsOfFlight = (int)((distanceToRefuel * 60) / 60);
+		int minsOfFlight = (int)((distanceToRefuel * 60) % 60);
 		toString();
-		System.out.println(" Status [ " + model + " flight time with remaining fuel of" + distanceToRefuel + " ]");
+		System.out.println("Currently Flying Jet Fuel Status:\n [ " + model + " flight time with remaining fuel of " + distanceToRefuel+" : Remaining "+hrsOfFlight +" hrs: "+minsOfFlight+ " mins ]");
+		System.out.println("-----------------------------------------------------------------------------------");
 	}
 
 	public double getSpeedOfJetInMach() {
 		double convertToMach = speed / 767.269;
-		return Math.round(convertToMach * 100) / 100;
+		return Math.round(convertToMach * 100.0) / 100;
 	}
 
 }

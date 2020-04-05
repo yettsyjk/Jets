@@ -1,20 +1,21 @@
 package com.skilldistillery.jets;
 
 import java.io.BufferedReader;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class JetsApplication {
 	
 	public static void main(String[] args) {
 		JetsApplication jsa = new JetsApplication();
-		Scanner sc = new Scanner(System.in);
-		 
+		Scanner sc = new Scanner(System.in);	 
 		
-		
+		CargoFreight cargoFreight;
+		JetFighter fighterjet;
+		JetsImpl anyOtherJet;
 		
 		jsa.launch(jsa, sc);
 	}
@@ -26,9 +27,8 @@ public class JetsApplication {
 		boolean keepGoing = true;
 		int choice = 0;
 		System.out.println("Welcome to Air Ops: \nCurrently sky condition is clear and flight deck is hot.");
-		System.out.println("Press Enter");
+		System.out.println("Press Enter For Menu Options");
 		sc.nextLine();
-		
 		
 		while(keepGoing == true) {
 			displayMenu();
@@ -82,6 +82,7 @@ public class JetsApplication {
 	}
 	
 	public static void setupAirField(AirField flightDeck) {
+		
 		BufferedReader bufIn = null;
 		// try catch block with resources will close the scanner
 		try {
@@ -93,23 +94,40 @@ public class JetsApplication {
 				
 				String[] selections = line.split(",");
 				
-				String type = selections[0].trim();
-				String model = selections[1].trim();
+				//String type = selections[0];
+				if (selections[0].equals("CargoFreight")) {
+					String model = selections[1];
 
-				double speed = Double.parseDouble(selections[2].trim());
-				long price = Long.parseLong(selections[3].trim());
-				int range = Integer.parseInt(selections[4].trim());
-				boolean anotherField = Boolean.parseBoolean(selections[5].trim());
-				
-				if (selections.equals("CargoFreight")) {
+					double speed = Double.parseDouble(selections[2].trim());
+					long price = Long.parseLong(selections[3].trim());
+					int range = Integer.parseInt(selections[4].trim());
+					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
 					
-					CargoFreight anotherCargoFreight = new CargoFreight(type, model, speed, price, range, anotherField);
-					flightDeck.addJet(anotherCargoFreight);
+					
+					CargoFreight cargoFreight = new CargoFreight(model, speed, price, range, anotherField);
+					flightDeck.getListOfJets().add(cargoFreight);
+					//flightDeck.addJet(cargoFreight);
 				}
-				if (selections.equals("FighterJet")) {
-	
-					JetFighter anotherFighterJet = new JetFighter(type, model, speed, price, range, anotherField);
-					flightDeck.addJet(anotherFighterJet);
+				else if (selections[0].equals("FighterJet")) {
+					String model = selections[1];
+					double speed = Double.parseDouble(selections[2].trim());
+					long price = Long.parseLong(selections[3].trim());
+					int range = Integer.parseInt(selections[4].trim());
+					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+					
+					JetFighter fighterjet = new JetFighter(model, speed, price, range, anotherField);
+					flightDeck.getListOfJets().add(fighterjet);
+					//flightDeck.addJet(fighterjet);
+				}
+				else if(selections[0].equals("anyOtherJet")) {
+					String model = selections[1];
+					double speed = Double.parseDouble(selections[2].trim());
+					long price = Long.parseLong(selections[3].trim());
+					int range = Integer.parseInt(selections[4].trim());
+					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+					
+					JetsImpl anyOtherJet = new JetsImpl();
+					flightDeck.getListOfJets().add(anyOtherJet);
 				}
 
 			}
@@ -127,6 +145,7 @@ public class JetsApplication {
 				}
 			}
 		}
+		
 	}
 
 	public static void displayMenu() {
@@ -135,7 +154,7 @@ public class JetsApplication {
 		System.out.println("|---------------- Pensacola, FL ---------------|");
 		System.out.println("|------------------- MENU ---------------------|");
 		System.out.println("|----------------------------------------------|");
-		System.out.println("|1) Press 1 for List Fleet                     |");
+		System.out.println("|1) Press 1 to List Fleet                      |");
 		System.out.println("|2) Press 2 to Fly All Jets                    |");
 		System.out.println("|3) Press 3 to View Fastest Jet                |");
 		System.out.println("|4) Press 4 to View Jet with Longest Range     |");
@@ -149,9 +168,14 @@ public class JetsApplication {
 
 	// menu option 1
 	private static void listFleet(AirField flightDeck) {
+	System.out.println("List Fleet: ");	
+	System.out.println();
+	System.out.println("Cargo Freight:");
 		for (Jets jets : flightDeck.getListOfJets()) {
 			System.out.println(jets.toString());
 		}
+		
+		//three for each loops for three jet types Cargo Freight, Jet Fighter, Any Other Jet 
 	}
 
 	// menu option 2
@@ -178,6 +202,7 @@ public class JetsApplication {
 	// menu option 4
 	private static void JetLongestRange(AirField flightDeck) {
 		Jets longRangeJet = new JetFighter();
+		
 		longRangeJet.setRange(52);
 		for (Jets individualJet : flightDeck.getListOfJets()) {
 			if (individualJet.getRange() > longRangeJet.getRange()) {
@@ -207,10 +232,10 @@ public class JetsApplication {
 
 	// menu option 7
 	private static void AddJetToFleet(AirField flightDeck, Scanner sc) {
-		System.out.println("Adding Jet to Flight Deck Line Up  ");
+		System.out.println("Adding Jet to Flight Deck Roster   ");
 		System.out.println("1) Press 1 for CargoFreight Jet    ");
 		System.out.println("2) Press 2 for Fighter Jet         ");
-		System.out.println("3) Press 3 for Jet                 ");
+		System.out.println("3) Press 3 for Any Other Jet       ");
 		System.out.println("4) Press 4 to Quit                 ");
 		int choice = sc.nextInt();
 
@@ -223,8 +248,8 @@ public class JetsApplication {
 			flightDeck.addJet(jetAddSetOfJet(ajf, sc));
 
 		} else if (choice == 3) {
-			JetsImpl creativeJet = new JetsImpl();
-			flightDeck.addJet(jetAddSetOfJet(creativeJet, sc));
+			JetsImpl anyOtherJet = new JetsImpl();
+			flightDeck.addJet(jetAddSetOfJet(anyOtherJet, sc));
 
 		} else if (choice == 4) {
 			System.out.println("See You Next Time");
@@ -236,10 +261,11 @@ public class JetsApplication {
 
 	// menu option 8
 	private static void RemoveAJetFromFleet(AirField flightDeck, Scanner sc) {
-		System.out.println("Whoa! SEC is here and they want a list of all current flight deck visitors.");
+		System.out.println("Whoa! SEC is here and they want a list of all current flight deck visitors. \nWhich Jet will you remove from the flight deck roster? ");
 		for (int individualJet = 0; individualJet < flightDeck.getListOfJets().size(); individualJet++) {
 			System.out.println("Printed Roster: [ " + individualJet + "  "
 					+ flightDeck.getListOfJets().get(individualJet).getModel() + " ] ");
+			
 		}
 		int choice = sc.nextInt();
 
@@ -281,6 +307,9 @@ public class JetsApplication {
 	}
 
 	private static Jets jetAddSetOfJet(Jets lineUp, Scanner sc) {
+//		System.out.println("Enter Type of Jet: \n(Cargo Freight, Fighter Jet, Hot Air Balloon, Drone, Private Jet etc) ");
+//		lineUp.setType(sc.next());
+		
 		System.out.println("Enter Model of Jet: ");
 		lineUp.setModel(sc.next());
 
@@ -298,28 +327,28 @@ public class JetsApplication {
 		return lineUp;
 	}
 
-	private static void addJet(AirField flightDeck, Scanner sc) {
-		System.out.println("Let the Tower Know Jet Type Adding to Flight Deck.");
-		System.out.println("Select Style of Jet to Add to Flight Deck: ");
-		System.out.println("1) Press 1 for CargoFreight \n 2) Press 2 for Private Jet \n 3) Press 3 for Economy Jet  ");
-		int userInput = sc.nextInt();
-
-		if (userInput == 1) {
-			CargoFreight jetType = new CargoFreight();
-			flightDeck.addJet(jetAddSetOfJet(jetType, sc));
-
-		} else if (userInput == 2) {
-			JetFighter jetType = new JetFighter();
-			flightDeck.addJet(jetAddSetOfJet(jetType, sc));
-
-		} else if (userInput == 3) {
-			JetsImpl jetType = new JetsImpl();
-			flightDeck.addJet(jetAddSetOfJet(jetType, sc));
-
-		} else {
-			System.out.println("Invalid Entry on the Flight Deck");
-		}
-	}
+//	private static void addJet(AirField flightDeck, Scanner sc) {
+//		System.out.println("Let the Tower Know Jet Type Adding to Flight Deck.");
+//		System.out.println("Select Style of Jet to Add to Flight Deck: ");
+//		System.out.println("1) Press 1 for CargoFreight \n 2) Press 2 for Private Jet \n 3) Press 3 for Economy Jet  ");
+//		int userInput = sc.nextInt();
+//
+//		if (userInput == 1) {
+//			CargoFreight jetType = new CargoFreight();
+//			flightDeck.addJet(jetAddSetOfJet(jetType, sc));
+//
+//		} else if (userInput == 2) {
+//			JetFighter jetType = new JetFighter();
+//			flightDeck.addJet(jetAddSetOfJet(jetType, sc));
+//
+//		} else if (userInput == 3) {
+//			JetsImpl jetType = new JetsImpl();
+//			flightDeck.addJet(jetAddSetOfJet(jetType, sc));
+//
+//		} else {
+//			System.out.println("Invalid Entry on the Flight Deck");
+//		}
+//	}
 
 	
 

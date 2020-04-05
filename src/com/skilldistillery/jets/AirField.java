@@ -15,11 +15,11 @@ public class AirField {
 	}
 	
 	public void addJet(Jets styleOfJet) {
-		this.listOfJets.add(styleOfJet);
+		listOfJets.add(styleOfJet);
 	}
 	
 	public void removeJet(int idx) {
-		this.listOfJets.remove(idx);
+		listOfJets.remove(idx);
 	}
 	
 	//listOfJets is a private ArrayList, provide a get() to access ListOfJets in other classes

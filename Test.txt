@@ -1,2 +1,4 @@
-CargoFreight,Boeing 737,490,3800000,3500,false
-FighterJet,CH Shenyang J-11,900,9008000,2300,false
+CargoFreight,Boeing,490.00,3800000,3500,false
+FighterJet,Shenyang J-11,900.00,9008000,2300,false
+anyOtherJet,Beechcraft,560.00,3800000,3500,false
+
