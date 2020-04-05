@@ -1,4 +1,11 @@
-CargoFreight,Boeing,490.00,3800000,3500,false
+CargoFreight,Boeing 737,490.00,3800000,3500,false
 FighterJet,Shenyang J-11,900.00,9008000,2300,false
-anyOtherJet,Beechcraft,560.00,3800000,3500,false
-
+FighterJet,CHShenyang J-11,900.00,9008000,3200,false
+CargoFreight,MD-11,460.00,800000,3500,false
+FighterJet,CHChengdu,902.00,9000000,2312,false
+FighterJet,USMCHarrier APG-65,901.00,9004440,5432,false
+CargoFreight,DHC-8-100,480.00,3800000,3500,false
+CargoFreight,MD-11,460.00,800000,3500,false
+FighterJet,USAFF-16 Fighting Falcon,610.00,5000000,4000,false
+CargoFreight,MD-80,490.00,3800000,3500,false
+CargoFreight,Bombardier CRJ200,455.55,3800000,3500,false

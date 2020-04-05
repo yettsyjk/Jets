@@ -15,7 +15,7 @@ public class CargoFreight extends Jets implements FreightAircraft{
 	@Override
 	public void loadCargo() {
 		this.hasCargo = true;
-		System.out.println("Status: [ "+ this.getModel()+ " is loading ] ");
+		System.out.println("Status: [ "+ this.getModel()+ " is loading cargo ] ");
 	}
 	
 	@Override
