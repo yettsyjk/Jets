@@ -70,9 +70,9 @@ public class JetsApplication {
 			case 8:
 				RemoveAJetFromFleet(flightDeck, sc);
 				break;
-//			case 9:
-//				keepGoing = false;
-//				break;
+			case 9:
+				keepGoing = false;
+				break;
 			default:
 				keepGoing = false;
 				break;
@@ -91,7 +91,7 @@ public class JetsApplication {
 			
 			while ((line = bufIn.readLine()) != null) {
 				
-				String[] selections = line.split(", ");
+				String[] selections = line.split(",");
 				
 				String type = selections[0].trim();
 				String model = selections[1].trim();
