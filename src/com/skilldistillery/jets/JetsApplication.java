@@ -1,6 +1,7 @@
 package com.skilldistillery.jets;
 
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,11 +12,14 @@ public class JetsApplication {
 	public static void main(String[] args) {
 		JetsApplication jsa = new JetsApplication();
 		Scanner sc = new Scanner(System.in);
-
+		 
+		
+		
+		
 		jsa.launch(jsa, sc);
 	}
 
-	public static void launch(JetsApplication jsa, Scanner sc) {
+	public void launch(JetsApplication jsa, Scanner sc) {
 		AirField flightDeck = new AirField();
 		setupAirField(flightDeck);
 		
@@ -87,7 +91,7 @@ public class JetsApplication {
 			
 			while ((line = bufIn.readLine()) != null) {
 				
-				String[] selections = line.split(",");
+				String[] selections = line.split(", ");
 				
 				String type = selections[0].trim();
 				String model = selections[1].trim();

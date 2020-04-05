@@ -10,8 +10,7 @@ public class AirField {
 	private List<Jets> listOfJets = new ArrayList<>();
 	
 	//create a no arg constructor to avoid the default
-	public void Airfield() {	
-		listOfJets = new ArrayList<>();
+	public void Airfield() {
 		
 	}
 	
