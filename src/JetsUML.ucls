@@ -3,8 +3,8 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.skilldistillery.jets.JetsApplication" project="Jets" 
     file="/Jets/src/com/skilldistillery/jets/JetsApplication.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="807" y="-31"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="326" width="224" x="14" y="10"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -12,8 +12,8 @@
   </class>  
   <class id="2" language="java" name="com.skilldistillery.jets.Jets" project="Jets" 
     file="/Jets/src/com/skilldistillery/jets/Jets.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="405" width="239" x="360" y="-117"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="-1" width="-1" x="491" y="218"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -21,79 +21,57 @@
   </class>  
   <class id="3" language="java" name="com.skilldistillery.jets.AirField" project="Jets" 
     file="/Jets/src/com/skilldistillery/jets/AirField.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="155" width="163" x="65" y="-157"/>    
+    <position height="-1" width="-1" x="709" y="105"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.skilldistillery.jets.JetsImpl" project="Jets" 
-    file="/Jets/src/com/skilldistillery/jets/JetsImpl.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="723" y="382"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="com.skilldistillery.jets.CargoFreight" project="Jets" 
+  <class id="4" language="java" name="com.skilldistillery.jets.CargoFreight" project="Jets" 
     file="/Jets/src/com/skilldistillery/jets/CargoFreight.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="166" y="222"/>    
+    <position height="173" width="263" x="0" y="373"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="com.skilldistillery.jets.FreightAircraft" project="Jets" 
-    file="/Jets/src/com/skilldistillery/jets/FreightAircraft.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="107" y="414"/>    
+  <class id="5" language="java" name="com.skilldistillery.jets.JetFighter" project="Jets" 
+    file="/Jets/src/com/skilldistillery/jets/JetFighter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="687" y="513"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="7" language="java" name="com.skilldistillery.jets.PrivateJet" project="Jets" 
-    file="/Jets/src/com/skilldistillery/jets/PrivateJet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="92" width="129" x="425" y="332"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="8" language="java" name="com.skilldistillery.jets.FighterJet" project="Jets" 
-    file="/Jets/src/com/skilldistillery/jets/FighterJet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="330" y="381"/>    
+  <class id="6" language="java" name="com.skilldistillery.jets.JetsImpl" project="Jets" 
+    file="/Jets/src/com/skilldistillery/jets/JetsImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="407" y="529"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
-  </interface>  
-  <generalization id="9">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <realization id="10">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <association id="11">    
+  </class>  
+  <association id="7">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="12" name="listOfJets">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="13" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+      <attribute id="8" name="listOfJets"/>      
+      <multiplicity id="9" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="14">    
+  <generalization id="10">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="11">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="12">    
     <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
