@@ -7,24 +7,27 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class JetsApplication {
-
+	
 	public static void main(String[] args) {
 		JetsApplication jsa = new JetsApplication();
 		Scanner sc = new Scanner(System.in);
 
-		launch(jsa, sc);
+		jsa.launch(jsa, sc);
 	}
 
-	private static void launch(JetsApplication jsa, Scanner sc) {
+	public static void launch(JetsApplication jsa, Scanner sc) {
 		AirField flightDeck = new AirField();
-		setupAirField(flightDeck);//Exception thrown 
+		setupAirField(flightDeck);
 		
 		boolean keepGoing = true;
 		int choice = 0;
 		System.out.println("Welcome to Air Ops: \nCurrently sky condition is clear and flight deck is hot.");
-
-		while (keepGoing == true) {
-			displayUserMenu();
+		System.out.println("Press Enter");
+		sc.nextLine();
+		
+		
+		while(keepGoing == true) {
+			displayMenu();
 			System.out.println();
 			
 
@@ -36,6 +39,7 @@ public class JetsApplication {
 				keepGoing = false;
 			}
 			System.out.println();
+		
 
 			switch (choice) {
 			case 1:
@@ -62,9 +66,9 @@ public class JetsApplication {
 			case 8:
 				RemoveAJetFromFleet(flightDeck, sc);
 				break;
-			case 9:
-				keepGoing = false;
-				break;
+//			case 9:
+//				keepGoing = false;
+//				break;
 			default:
 				keepGoing = false;
 				break;
@@ -73,49 +77,55 @@ public class JetsApplication {
 
 	}
 	
-	private static void setupAirField(AirField flightDeck) {
+	public static void setupAirField(AirField flightDeck) {
 		BufferedReader bufIn = null;
 		// try catch block with resources will close the scanner
 		try {
 			
-		bufIn = new BufferedReader(new FileReader("manifest.txt"));
+		bufIn = new BufferedReader(new FileReader("Test.txt"));
 			String line;
 			
 			while ((line = bufIn.readLine()) != null) {
+				
 				String[] selections = line.split(",");
 				
-				if (selections[0].equals("CargoFreight")) {
-					String model = selections[1];
+				String type = selections[0].trim();
+				String model = selections[1].trim();
 
-					double speed = Double.parseDouble(selections[2].trim());
-					long price = Long.parseLong(selections[3].trim());
-					int range = Integer.parseInt(selections[4].trim());
-					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+				double speed = Double.parseDouble(selections[2].trim());
+				long price = Long.parseLong(selections[3].trim());
+				int range = Integer.parseInt(selections[4].trim());
+				boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+				
+				if (selections.equals("CargoFreight")) {
 					
-					CargoFreight anotherCargoFreight = new CargoFreight(model, speed, price, range, anotherField);
+					CargoFreight anotherCargoFreight = new CargoFreight(type, model, speed, price, range, anotherField);
 					flightDeck.addJet(anotherCargoFreight);
 				}
-				if (selections[0].equals("FighterJet")) {
-					String model = selections[1];
-
-					double speed = Double.parseDouble(selections[2].trim());
-					long price = Long.parseLong(selections[3].trim());
-					int range = Integer.parseInt(selections[4].trim());
-					boolean anotherField = Boolean.parseBoolean(selections[5].trim());
+				if (selections.equals("FighterJet")) {
 	
-					JetFighter anotherFighterJet = new JetFighter(model, speed, price, range, anotherField);
+					JetFighter anotherFighterJet = new JetFighter(type, model, speed, price, range, anotherField);
 					flightDeck.addJet(anotherFighterJet);
 				}
 
 			}
 		} catch (FileNotFoundException e) {
-			System.err.println(e);
+			System.err.println("Invalid File Name "+e.getMessage());
 		} catch (IOException e) {
-			System.err.println(e);
+			System.err.println("Issue with File: "+e.getMessage());
+		}
+		finally {
+			if(bufIn != null) {
+				try {
+					bufIn.close();
+				} catch(IOException e)  {
+					System.err.println(e);
+				}
+			}
 		}
 	}
 
-	public static void displayUserMenu() {
+	public static void displayMenu() {
 		System.out.println("|----------------------------------------------|");
 		System.out.println("|--------------- Air Operations ---------------|");
 		System.out.println("|---------------- Pensacola, FL ---------------|");
@@ -150,7 +160,7 @@ public class JetsApplication {
 	// menu option 3
 	private static void ViewFastestJet(AirField flightDeck) {
 		Jets fastestJet = new JetFighter();
-		fastestJet.setSpeed(52);
+		fastestJet.setSpeed(52.0);
 		for (Jets individualJet : flightDeck.getListOfJets()) {
 			if (individualJet.getSpeed() > fastestJet.getSpeed()) {
 				fastestJet = individualJet;
@@ -260,8 +270,6 @@ public class JetsApplication {
 		case 9:
 			flightDeck.removeJet(choice);
 			break;
-			
-			
 		default:
 			System.out.println("Invalid Choice");
 		}
@@ -273,7 +281,7 @@ public class JetsApplication {
 		lineUp.setModel(sc.next());
 
 		System.out.println("Enter Speed of Jet (in Mph): ");
-		lineUp.setSpeed(sc.nextInt());
+		lineUp.setSpeed(sc.nextDouble());
 
 		System.out.println("Enter Purchase Price of Jet: ");
 		lineUp.setPrice(sc.nextLong());

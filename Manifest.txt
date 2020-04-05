@@ -22,13 +22,13 @@ CargoFreight, MD-80, 490, 3800000, 3500, false
 CargoFreight, Bombardier CRJ200, 455, 3800000, 3500, false
 CargoFreight, DHC-8-100, 480, 3800000, 3500, false
 CargoFreight, MD-11, 460, 800000, 3500, false
-FighterJet, CH Shenyang J-11, 900000, 900, false
-FighterJet, CH Chengdu, 900000, 900, false
-FighterJet, USMC Harrier APG-65, 900000, 900, false
-FighterJet, USAF F-16 Fighting Falcon, 6100000, 500, false
-FighterJet, USAF E-11A, 8000000, 450, false
-FighterJet, USCG C-37A, 64000000, 6500, false
-HotAirBalloon, Montgolfier, 22000, 10, false
+FighterJet, CH Shenyang J-11, 900, 9008000, false
+FighterJet, CH Chengdu, 902, 9000000, false
+FighterJet, USMC Harrier APG-65, 901, 9004440, false
+FighterJet, USAF F-16 Fighting Falcon, 610, 5000000, false
+FighterJet, USAF E-11A, 450, 8000000, 600, false
+FighterJet, USCG C-37A, 6500, 64000000, 500, false
+HotAirBalloon, Montgolfier, 10, 22000, 102, false
 Helicopter, USA MH-47 Chinook, 160, 700000, 450, false
 Helicopter, USAF HH-60U, 169, 700000, 450, false
 Helicopter, USCG MH-65D, 160, 689900, 500, false
