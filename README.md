@@ -11,6 +11,7 @@
 - price
 
 ## UML Diagram
+  - See UML Diagram in src directory
 
 ## User Story #1
   - Create a JetsApplication with a main method to launch your program.
@@ -36,6 +37,7 @@
 7. Add a jet to Fleet
 8. Remove a jet from Fleet
 9. Quit
+
 ## User Story #5
   - List fleet prints out the model, speed, range, and price of each jet. (There must be at least 5 jets stored when the program starts).
 ## User Story #6
@@ -48,14 +50,12 @@
 - The user is presented with an option specific to the interfaces you created. For example, Load all Cargo Jets, above, finds all implementors of the CargoCarrier interface and calls loadCargo() on each. (Note that the menu text is italicized because your options may be different, depending on your interfaces.)
 ## User Story #9
   - A user can add custom jets to the fleet.
-
     - This can be a JetImpl.
     - Stretch Goal: This leads to a sub-menu where the user chooses the type of Jet.
 - Users then enter information for the Jet, and it is added to the AirField.
 
 ## User Story #10
   - A user can remove a jet from the fleet.
-
     - The user is presented with a sub-menu to select a jet to delete by number.
     - Stretch Goal: a user can remove a jet (or jets) by name.
 ____________________________
@@ -77,14 +77,15 @@ ____________________________
 ## User Story #17
   - The user is given a menu option to save jets to a file. When selected the user enters the file name. The program then saves all jets to that file in the same format as the original input file. The code should first check that the file name isn't the same as the original input file, printing an error message if it is.
 
-## Lesson Learned:
+## Lessons Learned:
 1. Text file that was created for initial list of Jets had whitespace upon creation. Which wasn't the problem until the FileReader had to be told to split the line with specific parameters. This took me a while to figure out.
-``` String[] selections = line.split(",");
+```
+String[] selections = line.split(",");
 ```
 1. Overall the concept of abstract classes are still a weakness that I need to investigate further.
 1. Java Collection Frameworks were introduced this week and implemented within Jets application.
 1. Another fun weekend project to solidify the importance of coding along as well as labs within our 16 course work.
-1. ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+1. ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1. Yikes I spent too much time on https://stackoverflow.com/ My issue was I was attempting to reach an index that didn't exist, I was eager while debugging and fixed the way I traversed the created ArrayList.
 
 ### Technologies Used:
 1. Git
@@ -106,7 +107,7 @@ ____________________________
 ## MVP+
  - Stretch Goal: This leads to a sub-menu where the user chooses the type of Jet.
  - Stretch Goal: a user can remove a jet (or jets) by name.
- - Try implementing these stories only when you have committed and pushed a working project.
+ - Try implementing stories 11 -17 only when you have committed and pushed a working project.
 
 
 ## Copyright (c)2020 Yettsy Knapp
